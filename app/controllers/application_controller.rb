@@ -1,5 +1,3 @@
-require 'rack-flash'
-
 class ApplicationController < Sinatra::Base
   enable :sessions
   use Rack::Flash

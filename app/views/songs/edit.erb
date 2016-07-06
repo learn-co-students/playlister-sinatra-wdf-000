@@ -1,0 +1,9 @@
+<h3>Edit Song:</h3>
+<form method="post" action="/songs">
+  <p>Song Name: <input type="text" name="song[name]" value="<%=@song.name%>" id="name"></p>
+  <p>Artist Name: <input type="text" name="artist_name" value="<%=@song.artist.name%>" id="artist_name"></p>
+  <% Genre.all.each do |genre| %>
+    <input id="<%= genre.name %>" type="checkbox" name="song[genre_ids][]" value="<%= genre.id %>" <%= "checked" if @song.genres.include?(genre)%>> <%=genre.name%> 
+  <% end %>
+  <p><input type="submit" value="Save"></p>
+</form>

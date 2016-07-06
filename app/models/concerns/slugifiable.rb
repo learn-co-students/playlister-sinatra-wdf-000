@@ -7,7 +7,7 @@ module Slugifiable
   end
 
   module InstanceMethods
-    def slugify
+    def slug
       self.name.split(/\s+/).map{|x| x.downcase}.join("-")
     end
   end

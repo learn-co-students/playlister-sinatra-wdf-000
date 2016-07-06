@@ -1,0 +1,4 @@
+<h2>SONGS</h2>
+<%@songs.each do |song|%>
+  <h3><a href="/songs/<%=slugify song.name%>"><%= song.artist + " - " + song.name + " - " + song.genre%></a></h3>
+<%end%>

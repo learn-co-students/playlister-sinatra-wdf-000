@@ -1,5 +1,6 @@
 <h3>Edit Song:</h3>
-<form method="post" action="/songs">
+<form method="post" action="/songs/<%=@song.slug%>">
+  <input type="hidden" id="hidden" name="_method" value="patch">
   <p>Song Name: <input type="text" name="song[name]" value="<%=@song.name%>" id="name"></p>
   <p>Artist Name: <input type="text" name="artist_name" value="<%=@song.artist.name%>" id="artist_name"></p>
   <% Genre.all.each do |genre| %>

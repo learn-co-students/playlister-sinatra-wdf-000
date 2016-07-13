@@ -1,0 +1,10 @@
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% @genres.each do |genre| %>
+    <tr>
+      <td><a href="/genres/<%= genre.slug %>"><%= genre.name %></a> </td>
+    </tr>
+  <% end %>
+</table>

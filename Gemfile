@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem 'rack-flash3'
 gem 'sinatra'
 gem 'activerecord', :require => 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
@@ -11,7 +12,7 @@ gem 'shotgun'
 gem 'pry'
 
 group :test do
-  gem 'rspec'
+  gem 'rspec','3.4.0'
   gem 'capybara'
   gem 'rack-test'
   gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'

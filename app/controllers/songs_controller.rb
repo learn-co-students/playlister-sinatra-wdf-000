@@ -27,7 +27,7 @@ class SongsController < ApplicationController
     erb :'/songs/edit'
   end
 
-  post '/songs/:slug' do
+  patch '/songs/:slug' do
     @song = Song.find_by_slug(params[:slug])
     # update artist if not empty
     if params[:song][:artist] != ""
@@ -48,7 +48,6 @@ class SongsController < ApplicationController
 
   get '/songs/:slug' do
     @success = session[:success]
-    # binding.pry
     @song = Song.find_by_slug(params[:slug])
     erb :'/songs/show'
   end

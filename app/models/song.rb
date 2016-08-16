@@ -1,6 +1,13 @@
 class Song < ActiveRecord::Base
-  belongs_to :artist
-  has_many :song_genres, through: :song_genres
+  include Slugify::InstanceMethods
+  extend Slugify::ClassMethods
 
-  attr_accessor :artist_id, :genre_ids
+  belongs_to :artist
+
+  # in order to use the through, class has to have
+  # many of the connecting table
+  has_many :genres, through: :song_genres
+
+  # In this case this is the connecting table
+  has_many :song_genres
 end

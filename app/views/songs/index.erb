@@ -1,1 +1,7 @@
-In the songs controller!
+<h1 class="text-center">Songs Page</h1>
+<hr>
+<ol>
+  <% @songs.each do |song| %>
+  <a href="/songs/<%= "#{song.slug}" %>"><li><%= song.name %></li></a>
+  <% end %>
+</ol>

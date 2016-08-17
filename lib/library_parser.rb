@@ -1,6 +1,11 @@
 class LibraryParser
   def files
+    # creates the data_path based off of the current directory.
+    # __FILE__ returns the current directory
     data_path = File.join(File.dirname(__FILE__), '..', 'db', 'data')
+
+    # Returns the list of filenames from data_path (including '.' and '..')
+    # This is why we use [2..-1] to exclude '.' and '..' from the return
     Dir.entries(data_path)[2..-1]
   end
 
@@ -34,7 +39,7 @@ class LibraryParser
 
     song.song_genres.build(genre: genre)
     song.artist = artist
-    
+
     song.save
   end
 end

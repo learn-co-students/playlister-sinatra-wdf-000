@@ -1,0 +1,13 @@
+<h1><%=@genre.name%></h1>
+
+<h4>Artists:</h4>
+<%songs = @genre.songs%>
+<%artists = songs.collect{|song| song.artist}%>
+<%artists.flatten.uniq.each do |artist|%>
+  <p><a href = "/artists/<%=artist.slug%>"><%=artist.name%></a></p>
+<%end%>
+
+<h4>Songs in this genre:</h4>
+<%songs.each do |song|%>
+  <p><a href = "/songs/<%=song.slug%>"><%=song.name%></a></p>
+<%end%>

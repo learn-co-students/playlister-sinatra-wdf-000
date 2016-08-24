@@ -1,0 +1,6 @@
+<%Genre.all.each do |genre| %>
+
+<p>Name: <%= genre.name %></p>
+
+<a href='/genres/<%=genre.slug%>'>
+<% end %>

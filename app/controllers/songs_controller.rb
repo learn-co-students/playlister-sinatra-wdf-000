@@ -24,10 +24,10 @@ class SongsController < ApplicationController
 		@song = Song.create(params[:song])
 		@artist = Artist.find_or_create_by(params[:artist])
 		@song.artist = @artist
-		
-		params[:genres].each do |genre_id|
-			@song.genres << Genre.all.find{|i| i.id == genre_id.to_i }
-		end
+		@song.genre_ids = params[:genres]
+		# params[:genres].each do |genre_id|
+		# 	@song.genres << Genre.all.find{|i| i.id == genre_id.to_i }
+		# end
 
 		@song.save
 
@@ -45,13 +45,7 @@ class SongsController < ApplicationController
 		@song.update(params[:song])
 		@artist = Artist.find_or_create_by(params[:artist])
 		@song.artist = @artist
-
-		params[:genres].each do |genre_id|
-			if !@song.genres.include?(Genre.all.find{|i| i.id == genre_id.to_i })
-					@song.genres << Genre.all.find{|i| i.id == genre_id.to_i }
-			end
-		end
-
+		@song.genre_ids = params[:genres]
 		@song.save
 		flash[:message] = "Successfully updated song."
 		redirect to("/songs/#{@song.slug}")

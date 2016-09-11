@@ -1,0 +1,12 @@
+<h2>Your Genre Information!</h2>
+<p>Genre Name: <%= @genre.name %></p>
+<br><br>
+<header>Genre Artists:</header>
+<% @genre.artists.map do |artist|  %>
+<a href="/artists/<%=artist.slug%>"><%=artist.name%></a>
+<%end%>
+<br><br>
+<header>Genre Songs:</header>
+<% @genre.songs.map do |song|  %>
+<a href="/songs/<%=song.slug%>"><%=song.name%></a>
+<%end%>

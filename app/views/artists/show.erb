@@ -1,0 +1,7 @@
+Name:<%=@artist.name%>
+Song Name: <%=@artist.songs[0].name%>
+Genre: <%=@artist.genres[0].name%>
+
+<li> <a href="/songs/<%=@artist.songs[0].slug%>"> <%=@artist.songs[0].name%> </a></li>
+
+<li> <a href="/genres/<%=@artist.genres[0].slug%>"> <%=@artist.genres[0].name%> </a></li>

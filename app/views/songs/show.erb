@@ -1,0 +1,11 @@
+Name:<%=@song.name%>
+Artist Name: <%=@song.artist.name%>
+Genre: <%=@song.genres[0].name%>
+
+<li> <a href="/artists/<%=@song.artist.slug%>"> <%=@song.artist.name%> </a></li>
+
+<li> <a href="/genres/<%=@song.genres[0].slug%>"> <%=@song.genres[0].name%> </a></li>
+
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>

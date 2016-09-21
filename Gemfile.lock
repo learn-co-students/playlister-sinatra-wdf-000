@@ -50,6 +50,8 @@ GEM
       slop (~> 3.4)
     prybaby (0.0.2.2)
     rack (1.6.4)
+    rack-flash3 (1.0.5)
+      rack
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -100,6 +102,7 @@ DEPENDENCIES
   database_cleaner!
   pry
   prybaby
+  rack-flash3
   rack-test
   rake
   require_all

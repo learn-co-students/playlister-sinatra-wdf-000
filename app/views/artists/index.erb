@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="/stylesheets/playlister.css" rel="stylesheet">
+  </head>
+ <body>
+<h2>Clink the names to visit the artists!</h2>
+	<% @artists.each do |artist|%>
+	<a href="/artists/<%= artist.slug %>"><%= artist.name %></a>
+	<br></br>
+	<%end%>
+</body>
+</html>

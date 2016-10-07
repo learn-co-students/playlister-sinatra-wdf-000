@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe "Song Forms" do
+
   let(:artist_name) { "Person with a Face" }
   let(:genre_1_name) { "Hippity Hop" }
   let(:genre_2_name) { "New Age Garbage" }
